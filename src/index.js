@@ -7,13 +7,13 @@ const palavraChave = "prioritario";
 const idade = [];
 
 const funcoes = {
-    /*idade : 60,
+    idade : 60,
     palavraChave:"prioritario",
     getClassificacao: function() {
         if(idade >= 60) {
             return this.palavraChave; 
         }
-    }*/
+    
       ObservacaoCriada:(observacao) => {
         observacao.status = observacao.clientes.includes(palavraChave) ?
         "prioritario":"comum";
@@ -22,6 +22,7 @@ const funcoes = {
             dados: observacao
         });
       }
+    }
     
 };
 app.post("/eventos", (req, res) => {
