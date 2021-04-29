@@ -14,14 +14,15 @@ const funcoes = {
             return this.palavraChave; 
         }
     }*/
-    ObservacaoCriada : (observacao) => {
+      ObservacaoCriada:(observacao) => {
         observacao.status = observacao.clientes.includes(palavraChave) ?
         "prioritario":"comum";
         axios.post("http://localhost:10000/eventos", {
             tipo: "ObservacaoClassificada",
             dados: observacao
         });
-    }
+      }
+    
 };
 app.post("/eventos", (req, res) => {
     try {
